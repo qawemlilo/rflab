@@ -1,13 +1,12 @@
 var http = require('http'),
     connect = require('connect'),
     mailer = require('./mailer'),
-    port = process.env.PORT || 3002;
+    port = process.env.PORT || 3033;
     
     
 var app = connect()
     .use(connect.static('app')) 
     .use(connect.bodyParser());
-   // .use('/contact', contact);
 
 
 http.createServer(app).listen(port, function() {

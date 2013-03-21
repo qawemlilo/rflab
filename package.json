@@ -1,6 +1,6 @@
 {
   "name": "ragingflame",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Raging Flame Lab Website",
   "main": "app.js",
   "repository": {
@@ -13,13 +13,13 @@
     "development"
   ],
   "dependencies": {
-    "connect": "latest",
-    "nodemailer": "0.3.x"
+    "connect": "~2.7.3",
+    "nodemailer": "~0.3.44"
   },
   "author": "Qawelesizwe Mlilo",
   "license": "MIT",
   "engines": {
-    "node": ">= 0.8.0",
-    "npm": ">= 1.1.0"
+    "node": ">= 0.10.0",
+    "npm": ">= 1.2.0"
   }
 }
