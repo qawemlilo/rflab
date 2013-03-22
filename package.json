@@ -1,11 +1,11 @@
 {
-  "name": "ragingflame",
+  "name": "rflab",
   "version": "0.1.0",
   "description": "Raging Flame Lab Website",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qawemlilo/ragingflame.git"
+    "url": "https://github.com/qawemlilo/rflab.git"
   },
   "keywords": [
     "web",
@@ -14,7 +14,8 @@
   ],
   "dependencies": {
     "connect": "latest",
-    "nodemailer": "0.3.x"
+    "nodemailer": "0.3.x",
+    "connect-redirection": "0.0.1"
   },
   "author": "Qawelesizwe Mlilo",
   "license": "MIT",

@@ -31,11 +31,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand anchorLink" href="/">Raging Flame<i class="icon-fire"> </i> Lab</a>
+          <a class="brand" href="/">Raging Flame<i class="icon-fire"> </i> Lab</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="/about.html">About</a></li>
-              <li><a href="https://github.com/qawemlilo" target="_blank">Experiments</a></li>
+              <li><a href="/software.html">Software</a></li>
+              <li><a href="https://github.com/qawemlilo" target="_blank">Open Source</a></li>
               <li><a href="http://qawemlilo.rflab.co.za/" target="_blank">Blog</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -49,36 +50,39 @@
           <div class="row">
             <div class="span4">
               <h4>Raging Flame Lab</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tortor ac tortor dictum congue. Maecenas placerat, massa in aliquet consequat, enim purus convallis neque, et viverra augue purus vitae urna.</p>
+              <p>Raging Flame Lab  is a web and software development laboratory mainly focused on buiding <strong>"simple to use"</strong> web applications and software.<br> My clients range from small businesses and startups to medium sized organisations like schools and churches.</p>
             </div>
             
             <div class="span4">
               <h4>Me</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tortor ac tortor dictum congue. Maecenas placerat, massa in aliquet consequat, enim purus convallis neque, et viverra augue purus vitae urna.</p>
+              <p>My name is Qawelesizwe Mlilo, you can call me Que. I'm the creator of <a href="http://www.bookmarkmanager.co.za" target="_blank">Bookmark Manager</a>, a Single Page Web app for managing browser bookmarks. I am also a member of the <a href="http://community.joomla.org/showcase/" target="_blank">Joomla! Showcase</a> Team and an active Open Source contributor. You can view some of the Open Source software I have created below. </p>
             </div>
           </div>
           
-          <h1>Technologies</h1>
+          
+          <h1>Tools, Software &amp; Apps</h1>
           
           <div class="row">
             <div class="span4">
-              <h4>Custom Joomla! Extensions</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tortor ac tortor dictum congue. Maecenas placerat, massa in aliquet consequat, enim purus convallis neque, et viverra augue purus vitae urna.</p>
+              <h4><a href="https://npmjs.org/package/crushit" target="_blank">CrushIt</a></h4>
+              <p>CrushIt is a command-line software for compiling, concatenating, and minifying scripts from web pages</p>
             </div>
             
             <div class="span4">
-              <h4>Web Development</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tortor ac tortor dictum congue. Maecenas placerat, massa in aliquet consequat, enim purus convallis neque, et viverra augue purus vitae urna.</p>
+              <h4><a href="http://crushit-compiler.herokuapp.com" target="_blank">CrushIt Compiler</a></h4>
+              <p>CrushIt Compiler is a web interface for CrushIt.</p>
+            </div>
+          </div> 
+
+          <div class="row">  
+            <div class="span4">
+              <h4><a href="https://github.com/qawemlilo/node-ping" target="_blank">Node-Ping</a></h4>
+              <p>Node-ping is an Open Source website monitoring tool, it checks the availabilty of a website and sends out an email if it is down.</p>
             </div>
             
             <div class="span4">
-              <h4>Single Page Web Applications</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tortor ac tortor dictum congue. Maecenas placerat, massa in aliquet consequat, enim purus convallis neque, et viverra augue purus vitae urna.</p>
-            </div>
-            
-            <div class="span4">
-              <h4>Mobile Websites</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tortor ac tortor dictum congue. Maecenas placerat, massa in aliquet consequat, enim purus convallis neque, et viverra augue purus vitae urna.</p>
+              <h4><a href="http://video-download.herokuapp.com" target="_blank">NodeTube</a></h4>
+              <p>NodeTube is a web app for downloading YouTube videos. I created NodeTube because I needed to download tutorial videos for an online course I was doing.</p>
             </div>
           </div>   
         </div>
@@ -86,21 +90,21 @@
         <div class="span4">
          <div class="well">
           <h1>Get in touch</h1>
-          <form id="contactme" name="contactme" method="post" action="contactme">
-            <input class="f-input" placeholder="Your Name" type="text">
-            <input class="f-input" placeholder="Email Address" type="text">
-            <input class="f-input" placeholder="Phone Number" type="text">
+          <form id="contactme" name="contactme" method="post" action="contact">
+            <input class="f-input" name="name" placeholder="Your Name" type="text">
+            <input class="f-input" name="email" placeholder="Email Address" type="text">
+            <input class="f-input" name="phone" placeholder="Phone Number" type="text">
             <label></label>
-            <select class="f-input">
-                <option selected="selected">Budget</option>
-                <option>R5 000</option>
-                <option>R10 000</option>
-                <option>R15 000</option>
-                <option>R20 000</option>
-                <option>More than R20 00</option>
-              </select>
-            <textarea class="input-xlarge f-input" id="textarea" rows="5" placeholder="Your Message:"></textarea>
-            <button type="submit" class="btn btn-large btn-warning">Send</button>
+            <select class="f-input" name="budget">
+                <option value="" selected="selected">Budget</option>
+                <option value="5000">R5 000</option>
+                <option value="10000">R10 000</option>
+                <option value="15000">R15 000</option>
+                <option value="20000">R20 000</option>
+                <option value="more">More than R20 000</option>
+            </select>
+            <textarea class="input-xlarge f-input" name="message" id="textarea" rows="5" placeholder="Your Message:"></textarea>
+            <button type="submit" name="submit" class="btn btn-large btn-warning">Send</button>
           </form>
         </div> 
         </div>  
@@ -110,12 +114,16 @@
 
       <footer>
         <div class="container">
-           <p class="pull-left">Raging Flame &copy; 2013</p> 
-            <div class="pull-right">
+          <div class="row">
+          
+            <div  class="span6"><i class="icon-fire"> </i> Raging Flame &copy; 2013</div> 
+           
+            <div  class="span6" style="text-align: right">
               <a href="https://plus.google.com/u/0/111595084798587457827?rel=author">Google+</a>
               <a href="http://twitter.com/ragingflameblog" target="_blank">@Twitter</a>
               <a href="http://qawemlilo.rflab.co.za/" target="_blank">Blog</a>
             </div>
+          </div>
         </div>
       </footer>
 </body>
