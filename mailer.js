@@ -43,7 +43,7 @@ mailer = function (opts, fn) {
         });
     }
     catch (err) {
-        fn('Nodemailer could not send Mail', '');
+        fn(true, 'Nodemailer could not send Mail');
     }
 };
  

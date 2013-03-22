@@ -2276,9 +2276,10 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .navbar-fixed-top {
   position: fixed;
-  top: 5px;
+  top: 0px;
   right: 0;
   left: 0;
+  border-top: 5px solid #333;
   z-index: 99999;
 }
 .navbar-fixed-top .navbar-inner {
@@ -3956,7 +3957,6 @@ cursor: pointer;
 body {
   padding-top: 90px;
   padding-bottom: 40px;
-  border-top: 5px solid #333;
 }
 
       
