@@ -12,7 +12,7 @@ var http = require('http'),
         'error',
         'success',
         'software'
-    ], __dirname + '/app/'),
+    ], __dirname + '/app'),
     
     app, contact, about, software, error, success;
  
@@ -44,11 +44,11 @@ contact = function (req, res) {
     else {
         res.redirect('/error');
     }
-}
+};
 
 
 about = function (req, res) {
-    var page = cached.render('about');
+    var page = cached.renderPage('about');
 
     res.writeHead(200, {
         'Content-Type': 'text/html; charset=utf-8'
@@ -61,7 +61,7 @@ about = function (req, res) {
 
 
 software = function (req, res) {
-    var page = cached.render('software');
+    var page = cached.renderPage('software');
     
     res.writeHead(200, {
         'Content-Type': 'text/html; charset=utf-8'
@@ -74,7 +74,7 @@ software = function (req, res) {
 
 
 success = function (req, res) {
-    var page = cached.render('success');
+    var page = cached.renderPage('success');
     
     res.writeHead(200, {
         'Content-Type': 'text/html; charset=utf-8'
@@ -87,7 +87,7 @@ success = function (req, res) {
 
 
 error = function (req, res) {
-    var page = cached.render('error');
+    var page = cached.renderPage('error');
     
     res.writeHead(200, {
         'Content-Type': 'text/html; charset=utf-8'
@@ -114,3 +114,5 @@ app = connect()
 http.createServer(app).listen(port, function() {
   console.log('App running at http://localhost:%s', port);
 });
+
+
