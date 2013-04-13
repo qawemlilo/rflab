@@ -23,13 +23,12 @@ contact = function (req, res) {
     var name = req.body.name, 
         email = req.body.email,
         phone = req.body.phone || 'Not specified',
-        bugdet = req.body.bugdet || 'Not specified',
         message = req.body.message;
     
     if (name && email && message) {
         mailer({
             from: name + '<' + email + '>',
-            body: '<p>Phone: ' + phone + '</p><p>Bugdet: ' + bugdet + '</p><br><p>' + message + '</p>'
+            body: '<p>Phone: ' + phone + '</p><br><p>' + message + '</p>'
         }, function (error, response) {
             if (error) {
                 console.log('Nodemailer could not send Mail');
