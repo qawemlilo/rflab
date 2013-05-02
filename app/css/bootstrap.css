@@ -2135,7 +2135,6 @@ button.btn.small, input[type="submit"].btn.small {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #fff;
-  border-bottom: 1px ridge #E5E5E5;
 }
 .btn-navbar {
   display: none;
