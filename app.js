@@ -8,8 +8,8 @@ var http = require('http'),
 
 app = connect()
   .use(redirect())
-  .use(connect.static(__dirname + '/app'), {maxAge: (1000 * 60 * 60 * 24)})
   .use(connect.compress())
+  .use(connect.static('app'))
   .use(connect.bodyParser()) 
   .use('/contact', routes.contact)
   .use('/about', routes.about)
