@@ -14,5 +14,19 @@
           </div>
         </div>
       </footer>
+      
+<script type="text/javascript">
+(function () {
+    var software = document.getElementById('software'),
+        parser = document.createElement('a'),
+        page = location.href;
+        
+    parser.href = page;
+    
+    if (parser.pathname === '/software') {
+        software.className = 'active';
+    }
+}());
+</script>
 </body>
 </html>
