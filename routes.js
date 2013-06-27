@@ -95,7 +95,7 @@ blog = function (req, res) {
 };
 
 
-module.exports.contact = contact;
+//module.exports.contact = contact;
 module.exports.about = about;
 module.exports.software = software;
 module.exports.error = error;
