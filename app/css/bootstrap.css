@@ -2278,7 +2278,7 @@ button.btn.small, input[type="submit"].btn.small {
   top: 0px;
   right: 0;
   left: 0;
-  border-top: 5px solid #e5e5e5;
+  border-top: 5px solid #333;
   z-index: 99999;
 }
 .navbar-fixed-top .navbar-inner {
