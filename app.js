@@ -14,7 +14,8 @@ app = connect()
   .use('/about', routes.about)
   .use('/software', routes.software)
   .use('/error', routes.error)
-  .use('/success', routes.success);
+  .use('/success', routes.success)
+  .use('/contact', routes.contact);
 
 
 http.createServer(app).listen(port, function() {

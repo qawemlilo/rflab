@@ -9,24 +9,72 @@
             <div  class="span6" style="text-align: right">
               <a href="https://plus.google.com/117263379026168438856" rel="publisher">Google+</a>
               <a href="http://twitter.com/ragingflameblog" target="_blank">@Twitter</a>
-              <a href="http://qawemlilo.rflab.co.za/" target="_blank">Blog</a>
+              <a href="http://blog.ragingflame.co.za/" target="_blank">Blog</a>
             </div>
           </div>
         </div>
       </footer>
       
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>      
 <script type="text/javascript">
 (function () {
-    var software = document.getElementById('software'),
+    
+    
+    function highlightActiveMenu() {
+        var software = document.getElementById('software'),
         parser = document.createElement('a'),
         page = location.href;
         
-    parser.href = page;
+        parser.href = page;
     
-    if (parser.pathname === '/software') {
-        software.className = 'active';
+        if (parser.pathname === '/software') {
+            software.className = 'active';
+        }
     }
-}());
+    
+    
+    function handleContactForm(event) {
+        var self = this,
+            progress = $('.progress'),
+            responseD = $('#responseD');
+            
+        progress.slideDown('slow', function () {
+            $.post('/contact', $(self).serialize())
+            
+            .done(function(data) {
+                progress.slideUp('slow', function () {
+                    responseD.addClass('alert-success').html($('<strong>Message sent!</strong>')).slideDown('slow');
+                });
+                  
+                window.setTimeout(function () { 
+                    responseD.slideUp('slow', function () {
+                        responseD.removeClass('alert-success');
+                    }); 
+                }, 10 * 1000);
+            })
+            
+            .fail(function(data) {
+                progress.slideUp('slow', function () {
+                    responseD.addClass('alert-error').html($('<strong>Error, message not sent!</strong>')).slideDown();
+                });
+                  
+                window.setTimeout(function () { 
+                    responseD.slideUp('slow', function () {
+                        responseD.removeClass('alert-error');
+                    }); 
+                }, 10 * 1000);
+            });
+        });
+            
+        return false;
+    }
+    
+    
+    $('#contactme').on('submit', handleContactForm);
+    highlightActiveMenu();
+    
+    
+}())
 </script>
 </body>
 </html>
