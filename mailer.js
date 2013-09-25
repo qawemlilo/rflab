@@ -1,24 +1,20 @@
-var nodemailer = require('nodemailer'),
-    mailer;
+
+var nodemailer = require('nodemailer');
  
-mailer = function (opts, fn) {
+module.exports  = function (opts, fn) {
+    "use strict";
  
     var mailOpts, smtpTrans;
  
     // nodemailer configuration
-    try {
-        smtpTrans = nodemailer.createTransport('SMTP', {
-            service: 'Gmail',
-            auth: {
-                user: 'qawemlilo@gmail.com',
-                pass: 'qerlkxveorabgzrg'
-            }
-        });
-    }
-    catch (err) {
-        fn('Nodemailer could not create Transport', '');
-        return;
-    }
+    smtpTrans = nodemailer.createTransport('SMTP', {
+        service: 'Gmail',
+        
+        auth: {
+            user: 'qawemlilo@gmail.com',
+            pass: 'qerlkxveorabgzrg'
+        }
+    });
  
     // mailing options
     mailOpts = {
@@ -30,21 +26,16 @@ mailer = function (opts, fn) {
     };
  
     // Send maail
-    try {
-        smtpTrans.sendMail(mailOpts, function (error, response) {
-            //if sending fails
-            if (error) {
-                fn(true, error);
-            }
-            //Yay!! message sent
-            else {
-                fn(false, response.message);
-            }
-        });
-    }
-    catch (err) {
-        fn(true, 'Nodemailer could not send Mail');
-    }
+    smtpTrans.sendMail(mailOpts, function (error, response) {
+        //if sending fails
+        if (error) {
+            fn(true, error);
+        }
+        
+        //Yay!! message sent
+        else {
+            fn(false, response.message);
+        }
+    });
 };
- 
-module.exports = mailer;
+

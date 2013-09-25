@@ -2,6 +2,8 @@
 var fs = require('fs'), Cache;
 
 Cache = function (files, dir) {
+    "use strict";
+ 
     var self = this; 
     self.cache = Object.create({});
    

@@ -8,13 +8,15 @@ var mailer = require('./mailer'),
 
     
 contact = function (req, res) {
+    "use strict";
+ 
     var name = req.body.name, 
         email = req.body.email,
         phone = req.body.phone || 'Not specified',
         bugdet = req.body.bugdet || 'Not specified',
         message = req.body.message;
     
-    if (name && email && message) {
+    if (name.length > 0 && email.length > 3 && message.length > 3) {
         mailer({
             from: name + '<' + email + '>',
             body: '<p>Phone: ' + phone + '</p><p>Bugdet: ' + bugdet + '</p><br><p>' + message + '</p>'
@@ -40,6 +42,8 @@ contact = function (req, res) {
 
 
 about = function (req, res) {
+    "use strict";
+ 
     var page = cached.renderPage('about');
 
     res.writeHead(200, {
@@ -53,6 +57,8 @@ about = function (req, res) {
 
 
 software = function (req, res) {
+    "use strict";
+ 
     var page = cached.renderPage('software');
     
     res.writeHead(200, {
@@ -66,6 +72,8 @@ software = function (req, res) {
 
 
 success = function (req, res) {
+    "use strict";
+ 
     var page = cached.renderPage('success');
     
     res.writeHead(200, {
@@ -79,6 +87,8 @@ success = function (req, res) {
 
 
 error = function (req, res) {
+    "use strict";
+ 
     var page = cached.renderPage('error');
     
     res.writeHead(500, {
@@ -90,6 +100,8 @@ error = function (req, res) {
 
 
 blog = function (req, res) {
+    "use strict";
+ 
     var page = cached.renderPage('error');
     
     res.writeHead(200, {

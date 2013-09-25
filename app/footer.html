@@ -49,6 +49,7 @@
                 window.setTimeout(function () { 
                     responseD.slideUp('slow', function () {
                         responseD.removeClass('alert-success');
+                        self.reset();
                     }); 
                 }, 10 * 1000);
             })
@@ -61,6 +62,7 @@
                 window.setTimeout(function () { 
                     responseD.slideUp('slow', function () {
                         responseD.removeClass('alert-error');
+                        self.reset();
                     }); 
                 }, 10 * 1000);
             });
@@ -72,8 +74,6 @@
     
     $('#contactme').on('submit', handleContactForm);
     highlightActiveMenu();
-    
-    
 }())
 </script>
 </body>
