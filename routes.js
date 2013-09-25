@@ -20,16 +20,21 @@ contact = function (req, res) {
             body: '<p>Phone: ' + phone + '</p><p>Bugdet: ' + bugdet + '</p><br><p>' + message + '</p>'
         }, function (error, response) {
             if (error) {
-                console.log('Nodemailer could not send Mail');
-                res.redirect('/error');
+                res.writeHead(500);
+                res.end('Nodemailer could not send Mail');
             }
             else {
-                res.redirect('/success');
+                res.writeHead(200, {
+                    'Content-Type': 'text/plain; charset=utf-8'
+                });
+                
+                res.end('Mail sent');
             }
         });
     }
     else {
-        res.redirect('/error');
+        res.writeHead(500);
+        res.end('Nodemailer could not send Mail');
     }
 };
 
@@ -76,7 +81,7 @@ success = function (req, res) {
 error = function (req, res) {
     var page = cached.renderPage('error');
     
-    res.writeHead(200, {
+    res.writeHead(500, {
         'Content-Type': 'text/html; charset=utf-8'
     });
     
