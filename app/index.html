@@ -82,6 +82,48 @@
           </div>
         </div>
       </footer>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>      
+<script type="text/javascript">
+(function () {
+    function handleContactForm(event) {
+        var self = this,
+            progress = $('.progress'),
+            responseD = $('#responseD');
+            
+        progress.slideDown('slow', function () {
+            $.post('/contact', $(self).serialize())
+            
+            .done(function(data) {
+                progress.slideUp('slow', function () {
+                    responseD.addClass('alert-success').html($('<strong>Message sent!</strong>')).slideDown('slow');
+                });
+                  
+                window.setTimeout(function () { 
+                    responseD.slideUp('slow', function () {
+                        responseD.removeClass('alert-success');
+                    }); 
+                }, 10 * 1000);
+            })
+            
+            .fail(function(data) {
+                progress.slideUp('slow', function () {
+                    responseD.addClass('alert-error').html($('<strong>Error, message not sent!</strong>')).slideDown();
+                });
+                  
+                window.setTimeout(function () { 
+                    responseD.slideUp('slow', function () {
+                        responseD.removeClass('alert-error');
+                    }); 
+                }, 10 * 1000);
+            });
+        });
+            
+        return false;
+    }
+    
+    
+    $('#contactme').on('submit', handleContactForm);
+}())
+</script>
 </body>
 </html>

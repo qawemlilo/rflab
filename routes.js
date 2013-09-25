@@ -100,4 +100,5 @@ module.exports.about = about;
 module.exports.software = software;
 module.exports.error = error;
 module.exports.success = success;
+module.exports.contact = contact;
 
