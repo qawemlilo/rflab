@@ -12,7 +12,7 @@ module.exports  = function (opts, fn) {
         
         auth: {
             user: 'qawemlilo@gmail.com',
-            pass: 'qerlkxveorabgzrg'
+            pass: 'woktcytzxsjqumbi'
         }
     });
  
