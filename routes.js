@@ -30,7 +30,7 @@ contact = function (req, res) {
                     'Content-Type': 'text/plain; charset=utf-8'
                 });
                 
-                res.end('Mail sent %s %s', name, email);
+                res.end('Mail sent ' + name + ' ' + email);
             }
         });
     }
