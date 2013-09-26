@@ -91,7 +91,7 @@
             responseD = $('#responseD');
             
         progress.slideDown('slow', function () {
-            $.post('/contact', $(self).serialize() + '&access_token=' + (new Date().getTime()));
+            $.post('/contact', $(self).serialize() + '&access_token=' + (new Date().getTime()))
             
             .done(function(res) {
                 self.reset();
