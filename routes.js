@@ -19,24 +19,24 @@ contact = function (req, res) {
     if (name.length > 0 && email.length > 3 && message.length > 3) {
         mailer({
             from: name + '<' + email + '>',
-            body: '<p>Phone: ' + phone + '</p><p>Bugdet: ' + bugdet + '</p><br><p>' + message + '</p>'
+            body: '<p>Name: ' + name + '</p><p>Phone: ' + phone + '</p><br><p>' + message + '</p>'
         }, function (error, response) {
             if (error) {
                 res.writeHead(500);
-                res.end('Nodemailer could not send Mail');
+                res.end('Error, message not sent.');
             }
             else {
                 res.writeHead(200, {
                     'Content-Type': 'text/plain; charset=utf-8'
                 });
                 
-                res.end('Mail sent ' + name + ' ' + email);
+                res.end('Thanks ' + name + ', message sent!');
             }
         });
     }
     else {
         res.writeHead(500);
-        res.end('Nodemailer could not send Mail');
+        res.end('Error, message not sent.');
     }
 };
 

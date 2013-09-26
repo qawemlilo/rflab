@@ -21,7 +21,7 @@ module.exports  = function (opts, fn) {
         from: opts.from,
         replyTo: opts.from,
         to: 'qawemlilo@gmail.com',
-        subject: 'Contact from <rflab.co.za>',
+        subject: 'Mail from <ragingflame.co.za>',
         html: opts.body
     };
  

@@ -93,26 +93,26 @@
         progress.slideDown('slow', function () {
             $.post('/contact', $(self).serialize())
             
-            .done(function(data) {
-                progress.slideUp('slow', function () {
-                    responseD.addClass('alert-success').html($('<strong>Message sent!</strong>')).slideDown('slow');
+            .done(function(res) {
+                progress.slideUp(function () {
+                    responseD.addClass('alert-success').html($('<strong>' + res + '</strong>')).slideDown('slow');
                 });
                   
                 window.setTimeout(function () { 
-                    responseD.slideUp('slow', function () {
+                    responseD.slideUp(function () {
                         responseD.removeClass('alert-success');
                         self.reset();
                     }); 
                 }, 10 * 1000);
             })
             
-            .fail(function(data) {
-                progress.slideUp('slow', function () {
-                    responseD.addClass('alert-error').html($('<strong>Error, message not sent!</strong>')).slideDown();
+            .fail(function(res) {
+                progress.slideUp(function () {
+                    responseD.addClass('alert-error').html($('<strong>' + res + 'strong>')).slideDown();
                 });
                   
                 window.setTimeout(function () { 
-                    responseD.slideUp('slow', function () {
+                    responseD.slideUp(function () {
                         responseD.removeClass('alert-error');
                         self.reset();
                     }); 
