@@ -14,9 +14,10 @@ contact = function (req, res) {
         email = req.body.email,
         phone = req.body.phone || 'Not specified',
         bugdet = req.body.bugdet || 'Not specified',
-        message = req.body.message;
+        message = req.body.message,
+        access_token = req.body.access_token || false;
     
-    if (name.length > 0 && email.length > 3 && message.length > 3) {
+    if (name.length > 0 && email.length > 3 && message.length > 3 && access_token) {
         mailer({
             from: name + '<' + email + '>',
             body: '<p>Name: ' + name + '</p><p>Phone: ' + phone + '</p><br><p>' + message + '</p>'

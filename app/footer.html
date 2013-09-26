@@ -39,7 +39,7 @@
             responseD = $('#responseD');
             
         progress.slideDown(function () {
-            $.post('/contact', $(self).serialize())
+            $.post('/contact', $(self).serialize() + '&access_token=' + (new Date().getTime()));
             
             .done(function(res) {
                 self.reset();
