@@ -22,7 +22,9 @@ contact = function (req, res) {
             body: '<p>Name: ' + name + '</p><p>Phone: ' + phone + '</p><br><p>' + message + '</p>'
         }, function (error, response) {
             if (error) {
-                res.writeHead(500);
+                res.writeHead(500, {
+                    'Content-Type': 'text/plain; charset=utf-8'
+                });
                 res.end('Error, message not sent.');
             }
             else {
@@ -35,7 +37,9 @@ contact = function (req, res) {
         });
     }
     else {
-        res.writeHead(500);
+        res.writeHead(500, {
+            'Content-Type': 'text/plain; charset=utf-8'
+        });
         res.end('Error, message not sent.');
     }
 };
