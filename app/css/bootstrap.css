@@ -101,6 +101,8 @@ body {
   line-height: 18px;
   color: #333333;
   background: #fff;
+  padding-top: 90px;
+  padding-bottom: 40px;
 }
 a {
   color: #0088cc;
@@ -374,9 +376,25 @@ ol {
 li {
   line-height: 18px;
 }
-ul.unstyled {
+ul.unstyled,
+ol.unstyled {
   margin-left: 0;
   list-style: none;
+}
+
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+}
+
+ul.inline > li,
+ol.inline > li {
+  display: inline-block;
+  *display: inline;
+  padding-right: 5px;
+  padding-left: 5px;
+  *zoom: 1;
 }
 dl {
   margin-bottom: 18px;
@@ -3692,6 +3710,11 @@ cursor: pointer;
   .navbar .nav > .divider-vertical {
     display: none;
   }
+  /* Qawe snippet */
+  ul.breadcrumb {
+    display: block;
+  }
+  /* end */
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     padding: 6px 15px;
     font-weight: bold;
@@ -3757,11 +3780,21 @@ cursor: pointer;
   }
 }
 @media (min-width: 980px) {
+  /* Qawe snippet */
+  ul.breadcrumb {
+    display: none;
+  }
+  /* end */
   .nav-collapse.collapse {
     height: auto !important;
   }
 }
 @media (min-width: 1200px) {
+  /* Qawe snippet */
+  ul.breadcrumb {
+    display: none;
+  }
+  /* end */
   .row {
     margin-left: -30px;
     *zoom: 1;
@@ -3952,13 +3985,7 @@ cursor: pointer;
 
 
 
-
-body {
-  padding-top: 90px;
-  padding-bottom: 40px;
-}
-
-      
+ 
 h1 {
   font-family: 'Open Sans',sans-serif;
   font-weight: 200;
@@ -3969,6 +3996,19 @@ h1 {
 h1.big-heading {
   font-size: 36px;
 }
+
+ul.breadcrumb {
+  padding-left:0px;
+  border: 0px;
+  background-color: inherit!important;
+  background-image: none;
+  box-shadow: none;
+}
+
+ul.breadcrumb .divider {
+  padding: 0px 15px;
+}
+
 
 .brand, a.brand {
   font-family: 'Open Sans',sans-serif;
@@ -3990,8 +4030,8 @@ footer {
   background-color: #fff;
 }
 
-footer a  {
-  margin-right: 20px;
+footer li  {
+  margin-right: 5%;
 }
 
 #contactme .f-input {
