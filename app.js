@@ -9,7 +9,7 @@ var http = require('http'),
 app = connect()
   .use(redirect())
   .use(connect.compress())
-  .use(connect.static('build'))
+  .use(connect.static('production'))
   .use(connect.bodyParser()) 
   .use('/about', routes.about)
   .use('/software', routes.software)
