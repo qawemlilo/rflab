@@ -40,6 +40,7 @@ var mount = st({
 app = connect()
   .use(redirect())
   .use(mount)
+  .use(connect.compress())
   .use(connect.static('production'))
   .use(connect.bodyParser()) 
   .use('/about', routes.about)
