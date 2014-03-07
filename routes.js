@@ -30,7 +30,8 @@ contact = function (req, res) {
             }
             else {
                 res.writeHead(200, {
-                    'Content-Type': 'text/plain; charset=utf-8'
+                    'Content-Type': 'text/plain; charset=utf-8',
+                    'Vary': 'Accept-Encoding'
                 });
                 
                 res.end('Thanks ' + name + ', message sent!');
@@ -52,7 +53,8 @@ about = function (req, res) {
     var page = cached.renderPage('about');
 
     res.writeHead(200, {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'text/html; charset=utf-8',
+                    'Vary': 'Accept-Encoding'
     });
     
     res.end(page);
@@ -67,7 +69,8 @@ software = function (req, res) {
     var page = cached.renderPage('software');
     
     res.writeHead(200, {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'text/html; charset=utf-8',
+        'Vary': 'Accept-Encoding'
     });
     
     res.end(page);
@@ -82,7 +85,8 @@ success = function (req, res) {
     var page = cached.renderPage('success');
     
     res.writeHead(200, {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'text/html; charset=utf-8',
+        'Vary': 'Accept-Encoding'
     });
     
     res.end(page);
@@ -110,7 +114,8 @@ blog = function (req, res) {
     var page = cached.renderPage('error');
     
     res.writeHead(200, {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'text/html; charset=utf-8',
+        'Vary': 'Accept-Encoding'
     });
     
     res.end(page);
