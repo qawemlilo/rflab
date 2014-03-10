@@ -10,6 +10,7 @@ var http = require('http'),
     
 var mount = st({
     path: __dirname, // resolved against the process cwd
+    
     url: '/', // defaults to '/'
     
     cache: { // specify cache:false to turn off caching entirely
